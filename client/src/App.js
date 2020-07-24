@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import routes from 'routes';
 
 // components
-import { HeaderMain } from 'components/header/header.component';
+import HeaderMain from 'components/header/header.component';
 import { FooterMain } from 'components/footer/footer.component';
 
 // store
