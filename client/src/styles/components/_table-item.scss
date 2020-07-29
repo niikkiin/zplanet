@@ -1,0 +1,56 @@
+.table-image-name-container {
+	display: flex;
+  flex-direction: column;
+  
+	.product-name {
+    font-weight: 500;
+    border-top: 1px solid $dark-gray-color;
+    padding: 0.8rem;
+	}
+	.table-img-container {
+		width: 15rem;
+    height: auto;
+    display: grid;
+    place-items: center;
+  }
+}
+
+.quant {
+  
+.card-quantity {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+
+  .quantity {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding: 0.5rem 0;
+    font-size: 2rem;
+    border-top: 1px solid $dark-gray-color;
+    border-bottom: 1px solid $dark-gray-color;
+  }
+
+  button {
+    padding: 0.5rem 2rem;
+    outline: none;
+    border: 1px solid $dark-gray-color;
+    transition: all 0.5s ease;
+    cursor: pointer;	
+    font-size: 2rem;
+
+    &:hover{
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+
+}
+
+}

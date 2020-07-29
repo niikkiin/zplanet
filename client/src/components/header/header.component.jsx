@@ -1,38 +1,59 @@
 import React from 'react';
 
-// styles
-import { Header } from 'components/header/header.styles';
+// icons
+import { Icon } from '@iconify/react';
+import shoppingCart from '@iconify/icons-feather/shopping-cart';
+
+// components
+import CartItem from 'components/cart-item/cart-item.component';
+import { CustomButton } from 'components/custom-button/custom-button.component';
 
 // router
-import { Link } from 'react-router-dom';
-import CartIcon from 'components/cart-icon/cart-icon.component';
-import { CartDropDown } from 'components/cart-dropdown/cart-dropdown.component';
-import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-const HeaderMain = ({ hidden }) => {
+// redux
+import { connect } from 'react-redux';
+import { selectCartItemsCount, selectCartItems, selectCartTotal } from 'store/selectors/cart.selector';
+
+const Header = ({ cartItems, itemCount, total, history }) => {
 	return (
-		<Header>
-			<Link className='logo-container' to='/'>
-				<div className='logo'></div>
-			</Link>
-			{/* <div className='header-right'> */}
-			<div className='options'>
-				<Link className='option' to='/shop'>
-					<span>Shop</span>
-				</Link>
-				<Link className='option' to='/aabout'>
-					<span>About Us</span>
-				</Link>
+		<>
+			<div className='header'></div>
+			<input type='checkbox' className='openSidebarMenu' id='openSidebarMenu' />
+			<label for='openSidebarMenu' className='sidebarIconToggle'>
+				<Icon icon={shoppingCart} className='shopping-cart-icon' />
+				{itemCount === 0 ? null : <div class='cart-badge'>{itemCount}</div>}
+			</label>
+			<div id='sidebarMenu'>
+				<ul className='sidebarMenuInner'>
+					{cartItems.length ? (
+						<>
+							<li>
+								<div className='total-cart-price'>₱ {total}</div>
+
+								<CustomButton onClick={() => history.push('/checkout')} className='checkout-btn btn'>
+									Proceed to Checkout
+								</CustomButton>
+							</li>
+							{cartItems.map((cartItem) => {
+								const { id } = cartItem;
+								return <CartItem key={id} item={cartItem} />;
+							})}
+							<li></li>
+						</>
+					) : (
+						<div className='empty-cart-message'>Your cart is empty.</div>
+					)}
+				</ul>
 			</div>
-			<CartIcon />
-			{hidden ? null : <CartDropDown />}
-			{/* </div> */}
-		</Header>
+		</>
 	);
 };
 
-const mapStateToProps = ({ cart: { hidden } }) => ({
-	hidden,
+const mapStateToProps = (state) => ({
+	cartItems: selectCartItems(state),
+	itemCount: selectCartItemsCount(state),
+	total: selectCartTotal(state)
 });
 
-export default connect(mapStateToProps)(HeaderMain);
+export default withRouter(connect(mapStateToProps)(Header));

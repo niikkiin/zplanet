@@ -1,0 +1,169 @@
+.site-footer {
+	background-color: #26272b;
+	padding: 4.5rem 0 2rem;
+	font-size: 1.5rem;
+	line-height: 2.4rem;
+	color: #737373;
+
+	.content {
+		margin: 2rem 20rem;
+		display: grid;
+		grid-template-columns: 1fr 0.5fr;
+	}
+
+	.footer-title {
+		color: #fff;
+		font-size: 16px;
+		text-transform: uppercase;
+		margin-top: 5px;
+		letter-spacing: 2px;
+	}
+	.footer-content {
+		margin: 2rem 5rem 2rem 0;
+	}
+
+	hr {
+		border-top-color: #bbb;
+		opacity: 0.5;
+	}
+	hr.small {
+		margin: 2rem 20rem;
+	}
+
+	.footer-end {
+		margin: 2rem 20rem;
+		display: flex;
+		justify-content: space-between;
+
+		.social-icons {
+			list-style-type: none;
+			display: flex;
+		}
+		// .social-icons li {
+		// 	// width: 40px;
+		// 	// height: 40px;
+		// 	// line-height: 40px;
+		// 	// margin-left: 6px;
+		// 	// margin-right: 0;
+		// 	// border-radius: 100%;
+		// 	// background-color: #33353d;
+		// }
+	}
+	.icon {
+		padding: 2rem;
+		color: #fff;
+	}
+}
+
+@include respond(phone) { //width < 1200?
+	.site-footer {
+		background-color: #26272b;
+		padding: 4.5rem 0 2rem;
+		font-size: 1.5rem;
+		line-height: 2.4rem;
+	
+		.content {
+			display: flex;
+			flex-direction: column-reverse;
+			margin: 2rem;
+		}
+	
+		.footer-title {
+			color: #fff;
+			font-size: 16px;
+			text-transform: uppercase;
+			margin-top: 5px;
+			letter-spacing: 2px;
+		}
+		.footer-content {
+			margin: 2rem 5rem 2rem 0;
+		}
+
+		hr.small {
+			margin: 2rem;
+		}
+	
+		.footer-end {
+			margin: 2rem;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	
+}
+@include respond(tab-land) { //width < 1200?
+	.site-footer {
+		background-color: #26272b;
+		padding: 4.5rem 0 2rem;
+		font-size: 1.5rem;
+		line-height: 2.4rem;
+	
+		.content {
+			margin: 2rem 5rem;
+		}
+	
+		.footer-title {
+			color: #fff;
+			font-size: 16px;
+			text-transform: uppercase;
+			margin-top: 5px;
+			letter-spacing: 2px;
+		}
+		.footer-content {
+			margin: 2rem 5rem 2rem 0;
+		}
+
+		hr.small {
+			margin: 2rem 5rem;
+		}
+	
+		.footer-end {
+			margin: 2rem 5rem;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	
+}
+
+@include respond(tab-port) { //width < 900?
+	.site-footer {
+		background-color: #26272b;
+		padding: 4.5rem 0 2rem;
+		font-size: 1.5rem;
+		line-height: 2.4rem;
+	
+		.content {
+			display: flex;
+			flex-direction: column-reverse;
+			margin: 2rem;
+		}
+	
+		.footer-title {
+			color: #fff;
+			font-size: 16px;
+			text-transform: uppercase;
+			margin-top: 5px;
+			letter-spacing: 2px;
+		}
+		.footer-content {
+			margin: 2rem 5rem 2rem 0;
+		}
+
+		hr.small {
+			margin: 2rem;
+		}
+	
+		.footer-end {
+			margin: 2rem;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	
+}
+
+// @include respond(desktop) {
+// 	// 1 rem = 12px 12px/16px
+// 	font-size: 75%;
+// }

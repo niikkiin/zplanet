@@ -1,0 +1,12 @@
+.checkout-layout {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.checkout-content {
+  width: 100rem;
+  // height: 80vh;
+  margin: 5rem 0;
+  border: 1px solid $dark-gray-color;
+}

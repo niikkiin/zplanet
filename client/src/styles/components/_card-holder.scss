@@ -1,0 +1,33 @@
+.card-holder-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.title {
+  margin: 1rem 10rem;
+  font-size: 2rem;
+}
+
+@include respond(phone) { //width < 1200?
+  .card-holder-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .title {
+    margin: 1rem 5rem;
+  }
+  
+}

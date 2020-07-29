@@ -1,22 +1,23 @@
+// Layout Types
+import DefaultLayout from "layouts/default";
+import CheckoutLayout from "layouts/checkout";
+
+
 // Route Views
-import { ContentMainLayout } from "layouts/default";
-
-// Components
-import { HomePage } from "pages/homepage/homepage.component";
-import { ShopPage } from "pages/shop/shop.component";
-
+import HomePage from "pages/homepage/homepage.component";
+import CheckoutPage from "pages/checkout/checkout.component";
 
 export default [
   {
     path: "/",
     exact: true,
-    layout: ContentMainLayout,
+    layout: DefaultLayout,
     component: HomePage
   },
   {
-    path: "/shop",
+    path: "/checkout",
     exact: true,
-    layout: ContentMainLayout,
-    component: ShopPage
-  },
+    layout: CheckoutLayout,
+    component: CheckoutPage
+  }
 ];

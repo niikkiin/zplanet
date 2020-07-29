@@ -1,0 +1,101 @@
+button.btn {
+  min-width: 10rem;
+  width: auto;
+  margin: 1rem auto;
+  display: inline-block;
+  height: 5rem;
+  letter-spacing: 0.1rem;
+  line-height: 5rem;
+  padding: 0 3.5rem 0 3.5rem;
+  font-size: 1.7rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+  background-color: transparent;
+  border-radius: 1rem;
+  
+  &:hover {
+    color: #fff;
+    border: 1px solid $primary-color;
+    background-color: $primary-color;
+  }
+  
+  
+  &.submit-btn {
+    color: #fff;
+    background-color: $primary-color;
+    &:hover {
+      background-color: transparent;
+      color: $primary-color;
+    }
+  }
+
+  &.checkout-btn {
+    font-size: 1.3rem;
+    background-color: $primary-color;
+    padding: 1.5rem;
+    color: #fff;
+    height: 4rem;
+    line-height: 1rem;
+
+
+    &:hover {
+      color: $primary-color;
+      background-color: transparent;
+    }
+  }
+}
+
+@include respond(tab-land) { //width < 1200?
+  button.btn {
+    min-width: 10rem;
+    width: auto;
+    margin: 1rem auto;
+    display: inline-block;
+    height: 10rem;
+    letter-spacing: 0.1rem;
+    line-height: 5rem;
+    padding: 2rem 3.5rem;
+    font-size: 5rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    background-color: transparent;
+    border-radius: 1rem;
+    
+    &:hover {
+      color: $primary-color;
+      border: 1px solid $primary-color;
+    }
+    
+    
+    &.submit-btn {
+      color: #fff;
+      background-color: $primary-color;
+      &:hover {
+        background-color: transparent;
+        color: $primary-color;
+      }
+    }
+  
+    &.checkout-btn {
+      font-size: 1.3rem;
+      background-color: $primary-color;
+      padding: 1.5rem;
+      color: #fff;
+      height: 4rem;
+      line-height: 1rem;
+  
+  
+      &:hover {
+        color: $primary-color;
+        background-color: transparent;
+      }
+    }
+  }
+  
+}

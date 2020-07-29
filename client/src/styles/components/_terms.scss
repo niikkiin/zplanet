@@ -1,0 +1,34 @@
+.terms-container {
+	margin: 2rem;
+
+	.terms-title {
+		font-size: 2.1rem;
+	}
+
+	.terms-list {
+		margin: 1rem 2rem;
+		li {
+			font-size: 1.4rem;
+			margin: 0.8rem 0;
+		}
+	}
+}
+
+@include respond(phone) {
+	//width < 1200?
+	.terms-container {
+		margin: 2rem;
+
+		.terms-title {
+			font-size: 4rem;
+		}
+
+		.terms-list {
+			margin: 1rem 2rem;
+			li {
+				font-size: 3rem;
+				margin: 0.8rem 0;
+			}
+		}
+	}
+}

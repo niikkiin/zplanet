@@ -8,12 +8,14 @@ const CATEGORY_DATA = [
 		imageURL: categoryImg1,
 		title: 'Canned Lechon Variants',
 		subtitle: 'Experience ElarZ Original Lechon Recipe in Can! Anytime Anywhere!',
+		routeName: '#canned-lechon',
 	},
 	{
 		id: 2,
 		imageURL: categoryImg4,
 		title: 'ElarZ Special Lechon',
 		subtitle: 'Experience THE Original ElarZ ang Pambansang Lechon.',
+		routeName: '#special-lechon',
 	},
 ];
 

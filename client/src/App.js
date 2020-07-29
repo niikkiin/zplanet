@@ -1,50 +1,38 @@
-import React from 'react';
+  
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-// styles
-import { GlobalStyles } from 'utilities/styles/global.styles';
-import 'antd/dist/antd.css';
-import 'App.css';
+import routes from "routes";
 
-// router
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import routes from 'routes';
 
-// components
-import HeaderMain from 'components/header/header.component';
-import { FooterMain } from 'components/footer/footer.component';
+// ccustom styles
+import "styles/main.scss";
 
-// store
+// redux
 import { Provider } from 'react-redux';
-import store from 'store/store';
+import store from "store/store";
 
-const App = () => (
-	<Provider store={store}>
-		<Router basename={process.env.REACT_APP_BASENAME || ''}>
-			<div className='main-container'>
-				<GlobalStyles />
-				<HeaderMain />
-				<Switch>
-					{routes.map((route, index) => {
-						return (
-							<Route
-								key={index}
-								path={route.path}
-								exact={route.exact}
-								component={(props) => {
-									return (
-										<route.layout {...props}>
-											<route.component {...props} />
-										</route.layout>
-									);
-								}}
-							/>
-						);
-					})}
-				</Switch>
-				<FooterMain />
-			</div>
-		</Router>
-	</Provider>
+export default () => (
+  <Provider store={store}>
+    <Router basename={process.env.REACT_APP_BASENAME || ""}>
+      <div>
+        {routes.map((route, index) => {
+          return (
+            <Route
+              key={index}
+              path={route.path}
+              exact={route.exact}
+              component={(props => {
+                return (
+                  <route.layout {...props}>
+                    <route.component {...props} />
+                  </route.layout>
+                );
+              })}
+            />
+          );
+        })}
+      </div>
+    </Router>
+  </Provider>
 );
-
-export default App;
