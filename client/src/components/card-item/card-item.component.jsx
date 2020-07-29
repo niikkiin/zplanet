@@ -5,7 +5,7 @@ import { addItem, removeItem } from 'store/actions/cart.action';
 import { connect } from 'react-redux';
 
 const CardItem = ({ item, addItem,removeItem }) => {
-	const { name, description, price, imageURL, quantity } = item;
+	const { name, description, price, imageURL } = item;
 	return (
 		<div className='card-item-container'>
 			<figure className='snip1171'>
